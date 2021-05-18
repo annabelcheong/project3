@@ -29,8 +29,7 @@ Completed by Annabel Cheong
 ------------------------
 ## Repository Structure
 - ### FOLDER: Resources
-- FOLDER: Resources
-    - 
+
 
 
 
