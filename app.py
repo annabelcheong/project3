@@ -30,11 +30,17 @@ def happiness_story():
 
 # END POINT: 
 @app.route("/page3")
-def books():
+def machine_learning():
 
     # Return template and data
     return render_template("page3.html")
 
+# END POINT: 
+@app.route("/page4")
+def books():
+
+    # Return template and data
+    return render_template("page4.html")
 
 
 
