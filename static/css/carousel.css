@@ -24,6 +24,16 @@ body {
   margin-left: 0.5rem;
 }
 
+/* Main Pic on page */
+.main_pic {
+  display: block; 
+  margin: auto;  
+  margin-right: auto;
+  /* display:flex;
+  justify-content:center; */
+} 
+
+
 /* Jingle phrase */
 .jingle {
   font-family: 'Alegreya';
