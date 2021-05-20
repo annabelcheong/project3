@@ -24,7 +24,13 @@ body {
   margin-left: 0.5rem;
 }
 
-
+/* Jingle phrase */
+.jingle {
+  font-family: 'Alegreya';
+  text-align:center;
+  /* font-weight: bold; */
+  font-style:italic;
+}
 
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -36,7 +42,7 @@ body {
 /* Declare heights because of positioning of img element */
 /* Smallest screen view */
 .carousel-item {
-  height: 16rem; /* moves brown background box */
+  height: 17.5rem; /* moves brown background box */
   /* height:16rem; */
 }
 
@@ -128,7 +134,7 @@ body {
   }
 
   .carousel-item {
-    height: 32rem; /* moves brown background box */
+    height: 33rem; /* moves brown background box */
   }
 
   .map_pic {

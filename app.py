@@ -21,12 +21,19 @@ def home():
     # Return template and data
     return render_template("index.html")
 
-# END POINT: PAGE1
-@app.route("/page1")
-def map():
+# END POINT: 
+@app.route("/page2")
+def happiness_story():
 
     # Return template and data
-    return render_template("page1.html")
+    return render_template("page2.html")
+
+# END POINT: 
+@app.route("/page3")
+def books():
+
+    # Return template and data
+    return render_template("page3.html")
 
 
 
