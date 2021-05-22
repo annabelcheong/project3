@@ -64,6 +64,11 @@ body {
   height: 32rem;
 }
 
+.signature {
+  text-align: right;
+}
+
+
 .map_pic {
   display: inline-block;
   position: relative;
