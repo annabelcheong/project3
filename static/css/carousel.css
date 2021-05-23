@@ -138,6 +138,10 @@ body {
     height: 25rem; /* moves brown background box */
   }
 
+  .museo_pic {
+    width: 380px;
+    height: 500px;
+  }
   .map_pic {
     display: inline-block;
     position: relative;
@@ -158,6 +162,10 @@ body {
     height: 33rem; /* moves brown background box */
   }
 
+  .museo_pic {
+    width: 380px;
+    height: 500px;
+  }
   .map_pic {
     display: inline-block;
     position: relative;
