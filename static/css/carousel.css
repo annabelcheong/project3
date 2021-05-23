@@ -33,6 +33,12 @@ body {
   justify-content:center; */
 } 
 
+/* Main Pic on page */
+.happy_map {
+  display: block; 
+  margin: auto;  
+  margin-right: auto;
+} 
 
 /* Jingle phrase */
 .jingle {
