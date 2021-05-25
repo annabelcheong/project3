@@ -22,7 +22,7 @@ The purpose of the project is to produce a website to raise awareness on the fac
 ## Methodology and Approach 
 Loading in raw data (csv format) and performing ETL on the dataset via Python Pandas. There will be 2 final dataframes resulting from the ETL. 
 - The first dataframe will be converted back to a csv file, and loaded to Tableau Public to produce visualisations. 
-- The second dataframe will be loaded to the PostGRES database, loaded into the Flask app web server as an API endpoint. Subsequently, the API endpoint will be referenced in a javascript to be deployed onto the html webpage. 
+- The second dataframe will be loaded to the PostGRES database, loaded into the Flask app web server as an API endpoint. Subsequently, the API endpoint will be referenced in a javascript to be deployed onto the html webpage. Heroku will be used to deploy the website.
 
 ## Challenges
 
