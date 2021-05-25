@@ -52,12 +52,13 @@ def prediction_table():
  ######### CONNECT TO DATABASE AND READ DATA AS DATAFRAME VIA PANDAS #########
     # Step 1. ##### Connect to postgres database and save to variable 'engine' #####
     
+    # Switch between 'develop' or 'deploy'
     state = "develop"
 
     if state = "develop"
         rds_connection_string = "postgres:postgres@localhost:5432/events_db"
 
-    else if state = "deploy"
+    elif state = "deploy"
         rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]
 
     # rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:] or "postgres:postgres@localhost:5432/events_db"
@@ -65,11 +66,11 @@ def prediction_table():
     engine = create_engine(f'postgresql://{rds_connection_string}')
 
     # Step 2. #### Save the data to a variable via pandas, using the 'engine' variable. #####
-    events_info = pd.read_sql_table('events_table', engine) 
+    happy_info = pd.read_sql_table('happy_table', engine) 
 
     # Step 2. #### Convert pandas dataframe to json format. json.loads will convert it to a clean and readable format. #####
-        happy_table = json.dumps(json.loads(events_info.to_json(orient = "records")), indent=4)
-        happy_table = json.loads(event_result)
+        happy_info = json.dumps(json.loads(happy_info.to_json(orient = "records")), indent=4)
+        happy_info = json.loads(happy_info)
     return jsonify(happy_table)
 
 ##########################################################
@@ -81,4 +82,3 @@ if __name__ == "__main__":
 
 
 
-    
