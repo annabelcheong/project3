@@ -40,9 +40,30 @@ anychart.onDocumentReady(function () {
     // chart.angles([0, -45, 90])
     chart.angles([0, 45, 0])
     // enable color range
-    chart.colorRange(false);
+
+    // create and configure a color scale.
+    var customColorScale = anychart.scales.linearColor();
+    // customColorScale.colors(["#ffcc00", "#00ccff"]);
+    customColorScale.colors(["#ffcc00", "#013220"]);
+
+
+
+    // set the color scale as the color scale of the chart
+    chart.colorScale(customColorScale);
+
+    // add a color range
+    chart.colorRange().enabled(true);
+
+
+
+
+
+
+
+
+    // chart.colorRange(false);
     // set color range length
-    chart.colorRange().length('80%');
+    // chart.colorRange().length('80%');
   
     // format tooltips
     var formatter = "Influence on Happiness Score: {%value}{scale:(1)(1000)(1000)(1000)|()( thousand)( million)( billion)}";
