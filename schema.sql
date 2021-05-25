@@ -3,15 +3,14 @@
 --------------
 
 CREATE TABLE happy_table (
-  country VARCHAR PRIMARY KEY,  
-  title VARCHAR NOT NULL,
-  description VARCHAR NOT NULL,
-  category VARCHAR NOT NULL,
-  start_date timestamptz NOT NULL,
-  end_date timestamptz NOT NULL,
+  id VARCHAR PRIMARY KEY,  
+  year INT NOT NULL,
   country VARCHAR NOT NULL,
-  coords VARCHAR NOT NULL,
-  rank INT NOT NULL,
-  venue_name VARCHAR NOT NULL,
-  formatted_address VARCHAR NOT NULL
+  logged_GDP_per_capita DEC NOT NULL,
+  support DEC NOT NULL,
+  life_exp DEC NOT NULL,
+  freedom DEC NOT NULL,
+  generosity DEC NOT NULL,
+  corruption DEC NOT NULL,
+  score DEC NOT NULL,
 );
