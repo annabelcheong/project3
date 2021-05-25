@@ -35,7 +35,7 @@ anychart.onDocumentReady(function () {
     var chart = anychart.tagCloud(data);
   
     // set the chart title
-    chart.title('What Affects the Happiness Score most?')
+    chart.title('What affects the happiness score most?')
     // set array of angles, by which words will be placed
     // chart.angles([0, -45, 90])
     chart.angles([0, 45, 0])
