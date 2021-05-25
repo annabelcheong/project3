@@ -61,7 +61,7 @@ def prediction_table():
     elif state = "deploy"
         rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]
 
-    # rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:] or "postgres:postgres@localhost:5432/events_db"
+    # rds_connection_string = ('postgresql' + os.environ.get('DATABASE_URL', ''))[8:] or "postgres:postgres@localhost:5432/events_db"
     
     engine = create_engine(f'postgresql://{rds_connection_string}')
 

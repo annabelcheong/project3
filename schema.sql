@@ -3,7 +3,7 @@
 --------------
 
 CREATE TABLE happy_table (
-  id VARCHAR PRIMARY KEY,  
+  country VARCHAR PRIMARY KEY,  
   title VARCHAR NOT NULL,
   description VARCHAR NOT NULL,
   category VARCHAR NOT NULL,
