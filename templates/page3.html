@@ -1,4 +1,4 @@
-<!-- BOOKS PAGE -->
+<!-- MACHINE LEARNING PAGE -->
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.83.1">
-  <title>Happiness Story</title>
+  <title>Machine Learning</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/"> -->
@@ -45,8 +45,6 @@
 
 
 
-
-
 </head>
 
 <!-- **************************************************************************** -->
@@ -70,11 +68,11 @@
             <a class="nav-link" href="/">Home </a>
           </li>
           <li class="nav-item">
-             <!-- This html page is the Happiness Story Page -->
-            <a class="nav-link" href="#">Happiness Story</a>
+            <a class="nav-link" href="page2">Happiness Story</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="page3">Machine Learning</a>
+          <li class="nav-item"> 
+            <!-- This html page is the Machine Learning Page -->
+            <a class="nav-link" href="#">Machine Learning</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="page4">Books <span class="sr-only">(current)</span></a>
@@ -89,37 +87,11 @@
     </nav>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </header>
 
 <main>
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <!-- <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div> -->
-
     <div class="carousel-inner">
       <div class="carousel-item active"> 
 
@@ -131,12 +103,12 @@
           <div class="carousel-caption text-start">
             
            
-            <img class="main_pic img-fluid rounded" src="static/images/finland.png" width="50%", height="35%">
+            <img class="main_pic img-fluid rounded" src="static/images/ML.png" width="70%", height="45%">
             <br>
            
 
             <!-- <h1>Find your flow</h1> -->
-            <p class= "jingle">The Happiness Story through data lens</p>
+            <p class= "jingle">Machine Learning on the Features of Happiness.</p>
             <!-- <p><a class="btn btn-lg btn-primary" href="#">first button</a></p> -->
           
           </div>
@@ -168,16 +140,6 @@
       </div>
     </div>
 
-    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button> -->
-
-  </div>
 
 
   <!-- Marketing messaging and featurettes
@@ -194,39 +156,20 @@
 
         <div class="row">
           <div class="happy_map col-lg-12">
-            <h2 class="featurette-heading"><br>Global Happiness Story</h2>
-            <p> The happiness analysis is based on the dataset from 2020 and 2021 whereby results were taken from people across the world.
+            <h2 class="featurette-heading"><br>Machine Learning</h2>
+            <p> The happiness dataset from 2020 and 2021 has been used in a Machine Learning 
+              context to predict the happiness score based on the features. 
+              <br><br>
+              Random Forest (model type) was used to determine the importance of each feature, better 
+              depicted in the world cloud below. At a glance, social support and GDP are the most 
+              influential features of happiness.
             </p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-12">
-            <div class='tableauPlaceholder happy_map img-fluid' id='viz1621442030714' style='position: relative'>
-              <noscript><a href='#'><img alt='Happiness Score by Country. (4) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ha&#47;Happiness_final&#47;HappinessScorebyCountry_4&#47;1_rss.png' style='border: none' /></a>
-              </noscript><object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-                <param name='name' value='Happiness_final&#47;HappinessScorebyCountry_4' />
-                <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ha&#47;Happiness_final&#47;HappinessScorebyCountry_4&#47;1.png' /> 
-                <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' /><param name='language' value='en' />
-                <param name='filter' value='publish=yes' /></object>
-            </div> 
-    
-            <script type='text/javascript'>                    
-            var divElement = document.getElementById('viz1621442030714');                    
-            var vizElement = divElement.getElementsByTagName('object')[0];                    
-            if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1169px';vizElement.style.height='650px';} 
-            else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='854px';vizElement.style.height='600px';} 
-            else { vizElement.style.width='100%';vizElement.style.height='727px';}                     
-            var scriptElement = document.createElement('script');                    
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-            </script>
-
+            
           </div>
         </div>
 
@@ -236,55 +179,19 @@
         <div class="row">
           <div class="happy_map col-lg-12">
             <h2 class="featurette-heading"><br>Features Affecting Happiness</h2>
-            <p> Below is the list for the 15 happiest countries and the 15 unhappiest countries around the world.<br>
-                - Each data point represents a country. <br>
-                - Each feature graph holds 150 data points (i.e. 150 countries)
-                <br><br>
-                Click on the specific country to see the country's feature values: GDP per capita, social support, 
-                life expectency, freedom, generosity and the perception of corruption.
-                <br>
+            <p> A few countries' feature values and happiness scores are listed below.
             </p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-lg-12">
-            
-            <div class='tableauPlaceholder happy_map img-fluid' id='viz1621775349195' style='position: relative'>
-              <noscript><a href='#'><img alt='Happiest and Unhappiest Country Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ha&#47;Happiness_final&#47;HappiestandUnhappiestCountryDashboard&#47;1_rss.png' style='border: none' /></a>
-              </noscript>
-              <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='Happiness_final&#47;HappiestandUnhappiestCountryDashboard' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ha&#47;Happiness_final&#47;HappiestandUnhappiestCountryDashboard&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en' />
-                <param name='filter' value='publish=yes' />
-              </object>
-            </div>                
-            <script type='text/javascript'>                    
-            var divElement = document.getElementById('viz1621775349195');                    
-            var vizElement = divElement.getElementsByTagName('object')[0];                    
-            if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.maxWidth='1169px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';vizElement.style.maxHeight='854px';} 
-            else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.maxWidth='1169px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';vizElement.style.maxHeight='854px';} 
-            else { vizElement.style.width='100%';vizElement.style.height='977px';}                     
-            var scriptElement = document.createElement('script');                    
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-            </script>
-
+            <!-- INSERT TABLE OF SEVERAL COUNTRIES: and it's feature values, happiness score and predicteed ML happiness score -->
+          
           </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="happy_map col-lg-12">
             <h2 class="featurette-heading"><br>Analysis Overview: </h3> 
             <h2 class="text-muted">Features Affecting Happiness graphs</h3>
@@ -298,7 +205,7 @@
               <b>Generosity </b>and <b>Perceptions of Corruption </b>tends to not exhibit much of a correlation to happiness. 
             </p>
           </div>
-        </div>
+        </div> -->
         
 
     <!-- START THE FEATURETTES -->
