@@ -46,39 +46,36 @@ def books():
     return render_template("page4.html")
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
-# @app.route("/")
-# def prediction_table():
+@app.route("/ml_json")
+def prediction_table():
 
-#  ######### CONNECT TO DATABASE AND READ DATA AS DATAFRAME VIA PANDAS #########
-#     # Step 1. ##### Connect to postgres database and save to variable 'engine' #####
-    
-#     # Switch between 'develop' or 'deploy'
-#     state = "develop"
+    ######### CONNECT TO DATABASE AND READ DATA AS DATAFRAME VIA PANDAS #########
+    # Step 1. ##### Connect to postgres database and save to variable 'engine' #####
 
-#     if state = "develop"
-#         rds_connection_string = "postgres:postgres@localhost:5432/events_db"
+    # Switch between 'develop' or 'deploy'
+    state = "develop"
 
-#     elif state = "deploy"
-#         rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]
+    # State: Development (Local PostGRES)
+    if state == "develop":
+        rds_connection_string = "postgres:postgres@localhost:5432/the_flow_db"
 
-#     # rds_connection_string = ('postgresql' + os.environ.get('DATABASE_URL', ''))[8:] or "postgres:postgres@localhost:5432/events_db"
-    
-#     engine = create_engine(f'postgresql://{rds_connection_string}')
+    # State: Deployment (Heroku PostGRES)
+    elif state == "deploy":
+        rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]
 
-#     # Step 2. #### Save the data to a variable via pandas, using the 'engine' variable. #####
-#     happy_info = pd.read_sql_table('happy_table', engine) 
+    # rds_connection_string = ('postgresql' + os.environ.get('DATABASE_URL', ''))[8:] or "postgres:postgres@localhost:5432/events_db"
+        
+    engine = create_engine(f'postgresql://{rds_connection_string}')
 
-#     # Step 2. #### Convert pandas dataframe to json format. json.loads will convert it to a clean and readable format. #####
-#         happy_info = json.dumps(json.loads(happy_info.to_json(orient = "records")), indent=4)
-#         happy_info = json.loads(happy_info)
-#     return jsonify(happy_table)
+    # Step 2. #### Save the dataframe to a variable via pandas, using the 'engine' variable. #####
+    m2_table = pd.read_sql_table('happy_table_m2', engine) 
+        
+    # Step 2. #### Convert pandas dataframe to json format. json.loads will convert it to a clean and readable format. #####
+    m2_table_json = json.dumps(json.loads(m2_table.to_json(orient = "records")), indent=4)
+    m2_table_json = json.loads(m2_table_json)
+    return jsonify(m2_table_json)
 
 ##########################################################
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
