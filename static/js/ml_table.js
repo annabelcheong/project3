@@ -18,12 +18,11 @@ d3.select(".SearchBar")
     .attr("id", "search")
     .attr("type", "text")
     .attr("placeholder", "Spain")
-    .enter()
-    .append("br");
+    .enter();
 
-    // d3.select(".SearchBar")
-    // .append("br")
-    // .append("hr");
+    d3.select(".SearchBar")
+    .append("br")
+    .append("hr");
 
 
 
@@ -31,7 +30,7 @@ d3.select(".SearchBar")
 // Append table heading
 var column_names = ["Year","Country","Actual Happiness Score","Predicted Happiness Score"];
 
-var table = d3.select("#ml_table").append("table").attr("class", "table-bordered");
+var table = d3.select("#ml_table").append("table").attr("class", "table-bordered tab");
 table.append("thead").append("tr"); 
 
 var headers = table.select("tr").selectAll("th")
@@ -59,36 +58,6 @@ d3.json("/ml_json").then((data) => { // loading data from server
         trow.append("td").text(country[i])
         trow.append("td").text(y_actual[i])
         trow.append("td").text(y_predicted[i])
-        // .text(country[i])
     };
-
-
-    // trow = tbody.append("tr");
-    // trow.append("td").text(data.year[i]);
-        // .text(data.year);
-
-//   // data bind
-//   rows = table.select("tbody").selectAll("tr")
-//     .data(data, function(data){ return data.year; });
-  
-//   // enter the rows
-//   rows.enter()
-//     .append("tr")
-  
-//   // enter td's in each row
-//   row_entries = rows.selectAll("td")
-//       .data(function(data) { 
-//         var arr = [];
-//         for (var k in data {
-//           if (data.hasOwnProperty(k)) {
-// 		    arr.push(data[k]);
-//           }
-//         }
-//         return [arr[0],arr[1],arr[2],arr[3]];
-//       })
-//     .enter()
-//       .append("td") 
-
-//       console.log(data);
 
 });
