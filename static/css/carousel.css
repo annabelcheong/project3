@@ -165,6 +165,8 @@ body {
 
 /* Biggest screen view */
 @media (min-width: 62em) {
+
+
   .featurette-heading {
     margin-top: 0rem;
   }
@@ -177,6 +179,7 @@ body {
     width: 380px;
     height: 500px;
   }
+
   .map_pic {
     display: inline-block;
     position: relative;
@@ -192,17 +195,30 @@ body {
   }
 
   #ml_table {
-    width: 700px;
-    height: 500px;
-    position: absolute;
-    top: 40px;
-    left: 20px;
+    /* width: 600px;
+    height: 600px; */
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    /* top: 40px; */
+    /* left: 20px; */
   }
 
+  td {
+    background-color: rgb(160, 173, 154);
+    margin: 20px 20px 20px 20px;
+    text-align: center;
+    padding: 5px;
+    }​
+  /* 
+    th{
+      background-color: rgb(160, 173, 154);
+      margin: 20px 20px 20px 20px;
+      text-align: center;
+      }​ */
+  /* 
+    table {
+      padding: 100px;
+    } */
 
-
-
-
-
-
-}
+  };
