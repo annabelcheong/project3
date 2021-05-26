@@ -194,11 +194,20 @@ body {
     margin: auto;
   }
 
-  #ml_table {
+  .ml_headings {
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    /* top: 40px; */
+    /* left: 20px; */
+  }
+
+  .table-head {
     /* width: 600px;
     height: 600px; */
     position: relative;
     margin: auto;
+    text-align: center;
     justify-content: center;
     /* top: 40px; */
     /* left: 20px; */

@@ -78,13 +78,13 @@ d3.json("/ml_json").then((data) => { // loading data from server
       
         var searchResults = searched_data.map(function(r) {
 
+            
             // r.yr = parseInt(r.yr); 
 
             var regex = new RegExp("^" + text + ".*", "i");
             if (regex.test(r.country)) { // if there are any results
                 console.log(r.year);
                 console.log(r.country);
-                console.log(r.yr);
                 console.log("y_actual: " + r.y_actual);
                 console.log("y_predicted: " + r.y_predicted);
 
@@ -92,7 +92,7 @@ d3.json("/ml_json").then((data) => { // loading data from server
                 // table = d3.select("#ml_table")
                 tbody.html("");
 
-                // for (var i = 0; i<20; i++) {
+                // for (var i = 0; i<2; i++) {
                 trow = tbody.append("tr")
                 trow.append("td").text(r.year);
                 trow.append("td").text(r.country);
