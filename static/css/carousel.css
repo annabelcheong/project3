@@ -191,5 +191,18 @@ body {
     margin: auto;
   }
 
+  #ml_table {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+  }
+
+
+
+
+
+
 
 }
