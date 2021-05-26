@@ -76,40 +76,39 @@ d3.json("/ml_json").then((data) => { // loading data from server
         var searched_data = data,
         text = this.value.trim();
       
-        var searchResults = searched_data.map(function(r) {
+        searched_data.map((r) => {
+                // console.log(searched_data);
 
-            
-            // r.yr = parseInt(r.yr); 
+                var regex = new RegExp("^" + text + ".*", "i");
+                if (regex.test(r.country)) { // if there are any results  
+                    console.log(r.year);
+                    console.log(r.country);
+                    console.log("y_actual: " + r.y_actual);
+                    console.log("y_predicted: " + r.y_predicted);
+                    console.log("------------------------");
 
-            var regex = new RegExp("^" + text + ".*", "i");
-            if (regex.test(r.country)) { // if there are any results
-                console.log(r.year);
-                console.log(r.country);
-                console.log("y_actual: " + r.y_actual);
-                console.log("y_predicted: " + r.y_predicted);
+                    // Clear out what was in body before
+                    // table = d3.select("#ml_table")
+                    tbody.html("");
 
-                // Clear out what was in body before
-                // table = d3.select("#ml_table")
-                tbody.html("");
+                    // for (var i = 0; i<2; i++) {
+                    trow = tbody.append("tr");
+                    trow.append("td").text(r.year);
+                    trow.append("td").text(r.country);
+                    trow.append("td").text(r.y_actual);
+                    trow.append("td").text(r.y_predicted);
 
-                // for (var i = 0; i<2; i++) {
-                trow = tbody.append("tr")
-                trow.append("td").text(r.year);
-                trow.append("td").text(r.country);
-                trow.append("td").text(r.y_actual);
-                trow.append("td").text(r.y_predicted);
-                // };
+                    // };
+                    // for (var i = 0; i < 10; i++) {
+                    //     trow = table.append("tr");
+                    //     trow.append("td").text(r.yr[i]);
+                    //     trow.append("td").text(r.country[i]);// test row
+                    //     trow.append("td").text(r.y_actual[i]); 
+                    //     trow.append("td").text(r.y_actual[i]);
+                    // };
+                };
 
-            // for (var i = 0; i < 10; i++) {
-            //     trow = table.append("tr");
-            //     trow.append("td").text(r.yr[i]);
-            //     trow.append("td").text(r.country[i]);// test row
-            //     trow.append("td").text(r.y_actual[i]); 
-            //     trow.append("td").text(r.y_actual[i]);
-            // };
-            };
-
-        });
+            });
 
 
     });
