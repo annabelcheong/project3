@@ -23,7 +23,7 @@ anychart.onDocumentReady(function () {
     var data =
     [{"x": 'support',"value": 0.19896549192950844},
     {"x": 'GDP per capita',"value": 0.19285595893256546},
-    {"x": 'healthy life expectency', "value": 0.17709008126225667},
+    {"x": 'healthy life expectancy', "value": 0.17709008126225667},
     {"x": 'freedom', "value": 0.15510981975672064},
     {"x": 'corruption', "value": 0.15340257355358683},
     {"x": 'generosity', "value": 0.11042742824818405},
@@ -53,11 +53,6 @@ anychart.onDocumentReady(function () {
 
     // add a color range
     chart.colorRange().enabled(true);
-
-
-
-
-
 
 
 
