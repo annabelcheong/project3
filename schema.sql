@@ -12,5 +12,6 @@ CREATE TABLE happy_table (
   freedom DEC NOT NULL,
   generosity DEC NOT NULL,
   corruption DEC NOT NULL,
-  score DEC NOT NULL,
+  y_actual DEC NOT NULL,
+  y_predicted DEC NOT NULL
 );
