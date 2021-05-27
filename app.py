@@ -1,3 +1,6 @@
+# import os
+# print(os.environ['DATABASE_URL'])
+
 # Dependencies
 from flask import Flask, render_template, redirect, jsonify
 # import sqlalchemy
