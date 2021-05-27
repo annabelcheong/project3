@@ -53,7 +53,7 @@ def prediction_table():
     # Step 1. ##### Connect to postgres database and save to variable 'engine' #####
 
     # Switch between 'develop' or 'deploy'
-    state = "develop"
+    state = "deploy"
 
     # State: Development (Local PostGRES)
     if state == "develop":
@@ -61,7 +61,7 @@ def prediction_table():
 
     # State: Deployment (Heroku PostGRES)
     elif state == "deploy":
-        rds_connection_string = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]
+        rds_connection_string = "zrhfplbtdfzlsb:7a52354918a924ca23e8e6f09d7e221ec33c71c911e49ac91fef71daac2db1dc@ec2-54-74-14-109.eu-west-1.compute.amazonaws.com:5432/dasrk3uqfvvv2e"
 
     # rds_connection_string = ('postgresql' + os.environ.get('DATABASE_URL', ''))[8:] or "postgres:postgres@localhost:5432/events_db"
         
