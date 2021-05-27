@@ -1,9 +1,9 @@
 // insert into <div id='ml_table'> TABLE GOES HERE </div>
 
 // Use API endpoint: ml_json (See file app.py)
-// d3.json('/ml_json').then((data) => {
-//     // console.log(data);
-// });
+d3.json('/ml_json').then((data) => {
+    console.log(data);
+});
 
 // Append search bar and placeholder in the search
 d3.select(".searching")
@@ -75,11 +75,13 @@ d3.json("/ml_json").then((data) => { // loading data from server
     d3.select("#search").on("keyup", function() { // filter according to key pressed 
         var searched_data = data,
         text = this.value.trim();
+        tbody.html("");
       
         searched_data.map((r) => {
                 // console.log(searched_data);
 
                 var regex = new RegExp("^" + text + ".*", "i");
+                    
                 if (regex.test(r.country)) { // if there are any results  
                     console.log(r.year);
                     console.log(r.country);
@@ -89,7 +91,7 @@ d3.json("/ml_json").then((data) => { // loading data from server
 
                     // Clear out what was in body before
                     // table = d3.select("#ml_table")
-                    tbody.html("");
+                    // tbody.html("");
 
                     // for (var i = 0; i<2; i++) {
                     trow = tbody.append("tr");
