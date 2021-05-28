@@ -48,6 +48,16 @@ def books():
     # Return template and data
     return render_template("page4.html")
 
+
+# END POINT: MACHINE LEARNING PREDICTION; JSON DATA
+# @app.route("/predict")
+# def predict():
+
+# prediction = equation
+
+
+
+
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 @app.route("/ml_json")
 def prediction_table():
@@ -56,7 +66,7 @@ def prediction_table():
     # Step 1. ##### Connect to postgres database and save to variable 'engine' #####
 
     # Switch between 'develop' or 'deploy'
-    state = "deploy"
+    state = "develop"
 
     # State: Development (Local PostGRES)
     if state == "develop":
@@ -79,6 +89,14 @@ def prediction_table():
     return jsonify(m2_table_json)
 
 ##########################################################
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
