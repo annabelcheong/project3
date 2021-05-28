@@ -50,29 +50,29 @@ def books():
 
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
-@app.route("/predict")
+# @app.route("/predict")
+@app.route('/predict')
 def predict_score():
-
+    print("hello what's the name") 
 # prediction = equation
 
-    print("hello")
     try:
-        one = request.args.get('year') # Get parameters for sepal length
-        two = request.args.get('gdp') # Get parameters for sepal width
-        three = request.args.get('life_exp') # Get parameters for petal length
-        four = request.args.get('support') # Get parameters for petal width
-        five = request.args.get('freedom')
-        six = request.args.get('generosity')
-        seven = request.args.get('corruption')
+        print("testing number 2") # This works
+        # one = request.args.get('year') # Get parameters for name "year"
+        # two = request.args.get('gdp') # Get parameters for name "gdp"
+        # three = request.args.get('life_exp') # Get parameters for name "life_exp"
+        # four = request.args.get('support') # Get parameters for name "support"
+        # five = request.args.get('freedom')
+        # six = request.args.get('generosity')
+        # seven = request.args.get('corruption')
+        print("testing number 3")
+        happy_result= "wow"
+        print("testing number 4")
+        # print(happy_result)
+        # print(one)
+        # return render_template('page3.html',{one})
+        return render_template('page3.html', happy_result=happy_result)
 
-        # Get the output from the classification model
-        # variety = model.classify(sepal_len, sepal_wid, petal_len, petal_wid)
-        
-        happy_result = one
-        print("hello")
-        print(happy_result)
-        # Render the output in new HTML page
-        return render_template('page3.html', happy_result = happy_result)
     except:
         return 'Error'
 
