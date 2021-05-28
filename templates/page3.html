@@ -187,8 +187,66 @@
             <h3> <span class="text-muted">Random Forest Algorithm: Predict your happiness</span></h3>
             <p> The Random Forest Model will predict the happiness score based on the feature values you
               provided.
+            </p>
+          </div>
+        </div>
               <br><br>
-              Enter values for each feature:
+              <form action="classify" method="GET">
+                <p>Enter values for each feature: <br>
+                </p>
+                <br>
+
+                <div class="field">
+                  <p class="control">
+                  1. Year: <input class="input" type="number" value=2021 min=2020 max=2050 step='1' name="year" id="year" placeholder=2021>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <p class="control">
+                  2. GDP/capita (USD): <input class="input" type="number" value=62723 min=700 max=200000  step='1' name="gdp" id="gdp" placeholder=62723>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <p class="control">
+                  3. Healthy Life Expectancy: <input class="input" type="number" value=73.9 min=45 max=80  step='0.1' name="life_exp" id="life_exp" placeholder=73.9>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <p class="control">
+                  4. Social Support: <input class="input" type="number" value=0.94 min=0 max=1  step='0.01' name="support" id="support" placeholder=0.94>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <p class="control">
+                  5. Freedom: <input class="input" type="number" value=0.91 min=0 max=1  step='0.01' name="freedom" id="freedom" placeholder=0.91>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <p class="control">
+                  6. Generosity: <input class="input" type="number" value=0.16 min=-0.5 max=0.5  step='0.01' name="generosity" id="generosity" placeholder=0.16>
+                  </p>
+                </div>
+
+                <div class="field">
+                  <p class="control">
+                  7. Perceived Corruption: <input class="input" type="number" value=0.44 min=0 max=1  step='0.01' name="corruption" id="corruption" placeholder=0.44>
+                  </p>
+                </div>
+                
+
+                <i>Default values based on Australia 2021 data</i>
+                <br><br>
+
+                <div class="field">
+                  <button class="button btn btn-secondary">Predict Happiness Score</button>
+                </div>
+
+              </form>
             
             </p>
           </div>
