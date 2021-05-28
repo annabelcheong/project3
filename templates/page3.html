@@ -195,7 +195,7 @@
         <div class="row">
           <div class="col-lg-6">
 
-              <form action="classify" method="GET">
+              <form action="predict" method="GET">
                 <p>Enter <b>values</b> for each feature: <br>
                 </p>
 
@@ -245,10 +245,14 @@
                   <div class="field">
                     <button class="button btn btn-secondary">Predict Happiness Score</button>
                     <br><br>
+                    
                   </div>
-
-                </p>
+                  </p>
                 </div>
+              </form>
+
+            {{happy_result}}
+            
           </div>
         
 
@@ -259,11 +263,8 @@
       
         <div class="col-lg-12">  
           <div>         
-                <!-- <i>Default values based on Australia 2021 data</i>
-                <br><br> -->
-
-              </form>
-            </p>
+              
+          
           </div>
         </div>
         <hr class="featurette-divider">
