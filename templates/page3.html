@@ -188,7 +188,7 @@
               <br>
             <h3> <span class="text-muted">Random Forest Algorithm: Predict your happiness</span></h3>
             <p> The Random Forest Model will predict the happiness score based on the feature values you
-              provide below.
+              provide below. Score ranges from 1 to 10 where 10 is the happiest.
             </p>
           </div>
         </div>
@@ -247,14 +247,15 @@
 
                   <div class="field">
                     <button class="button btn btn-secondary">Predict Happiness Score</button>
-                    <br><br>
+                    <br>
                     
                   </div>
                   </p>
                 </div>
               </form>
 
-            <p>{{happy_result}} hello</p>
+            <p>Predicted Happiness Score: <b> {{happy_result}} </b>
+              <br></p>
 
           </div>
         
