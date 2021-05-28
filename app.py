@@ -56,7 +56,7 @@ def books():
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 # @app.route("/predict")
-@app.route('/predict')
+@app.route('/predict', methods=['GET'])
 def predict_score():
     print("hello what's the name") 
 # prediction = equation
@@ -64,17 +64,17 @@ def predict_score():
     try:
         print("testing number 2") # This works
         # one = request.args.get('year') # Get parameters for name "year"
-        # two = request.args.get('gdp') # Get parameters for name "gdp"
+        # gdp_per_capita = request.args.get('gdp') # Get parameters for name "gdp"
+        # ln_gdp_per_capita = math.log(gdp_per_capita)
         # three = request.args.get('life_exp') # Get parameters for name "life_exp"
         # four = request.args.get('support') # Get parameters for name "support"
         # five = request.args.get('freedom')
         # six = request.args.get('generosity')
         # seven = request.args.get('corruption')
         print("testing number 3")
-        happy_result= "wow"
+        happy_result= math.log(1+3*20000)
         print("testing number 4")
         # print(happy_result)
-        # print(one)
         # return render_template('page3.html',{one})
         return render_template('page3.html', happy_result=happy_result)
 
@@ -114,12 +114,6 @@ def prediction_table():
     return jsonify(m2_table_json)
 
 ##########################################################
-
-
-
-
-
-
 
 
 
