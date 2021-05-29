@@ -155,7 +155,7 @@ def prediction_table():
     # Step 1. ##### Connect to postgres database and save to variable 'engine' #####
 
     # Switch between 'develop' or 'deploy'
-    state = "develop"
+    state = "deploy"
 
     # State: Development (Local PostGRES)
     if state == "develop":
