@@ -1,5 +1,9 @@
 d3.select("#predict_but").on("click", function(year) {
-            
+    
+    // Clear previous user output happiness score 
+    const final_output = d3.select("#final_score")
+    final_output.html("");
+
     // Get value from input and save VARIABLE VALUES via d3 
 
     year = d3.select("#year").property("value")
