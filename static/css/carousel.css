@@ -29,8 +29,6 @@ body {
   display: block; 
   margin: auto;  
   margin-right: auto;
-  /* display:flex;
-  justify-content:center; */
 } 
 
 /* Main Pic on page */
@@ -68,6 +66,29 @@ body {
   left: 0;
   min-width: 100%;
   height: 32rem;
+}
+
+ /* Main Pic on Homepage*/
+ .skat {
+  display: block; 
+  margin: auto;  
+  margin-right: auto;
+  height: 160px;
+  width: 320px;
+}   
+
+/* Main Pic on page minus homepage */
+.main_pic {
+  display: block; 
+  margin: auto;  
+  margin-right: auto;
+} 
+
+.museo_pic {
+  display: block;
+  margin: auto;
+  width: 380px;
+  height: 500px;
 }
 
 .signature {
@@ -157,10 +178,30 @@ td {
     height: 25rem; /* moves brown background box */
   }
 
+ /* Main Pic on Homepage*/
+ .skat {
+  display: block; 
+  margin: auto;  
+  margin-right: auto;
+  height: 270px;
+  width: 780px;
+}   
+  /* Main Pic on page except home page*/
+.main_pic {
+  display: block; 
+  margin: auto;  
+  margin-right: auto;
+  height: 270px;
+  width: 570px;
+} 
+
   .museo_pic {
-    width: 380px;
-    height: 500px;
+    width: 350px;
+    height: 445px;
+    display: block;
+    margin-top: 3rem;
   }
+
   .map_pic {
     display: inline-block;
     position: relative;
@@ -203,7 +244,18 @@ td {
     height: 33rem; /* moves brown background box */
   }
 
+  /* Main Pic on page */
+  .main_pic {
+    display: block; 
+    margin: auto;  
+    margin-right: auto;
+    width: 50%;
+    height: 30%;
+  } 
+
   .museo_pic {
+    display: block;
+    margin: auto;
     width: 380px;
     height: 500px;
   }
