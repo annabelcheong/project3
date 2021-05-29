@@ -31,7 +31,7 @@ d3.select("#predict_but").on("click", function(year) {
 
     console.log(data);
 
-    
+
 
     // Use to enter year:
     // d3.select(".predict_class")
@@ -40,28 +40,28 @@ d3.select("#predict_but").on("click", function(year) {
     // .text("Enter values for year:")
     // .append("br");
 
-    // Append year box:
-    d3.select(".SearchPredict")
-    .append("input")
-    .attr("class","searchPredict")
-    .attr("type","number")
-    .attr("placeholder","2021")
-    .enter();
+    // // Append year box:
+    // d3.select(".SearchPredict")
+    // .append("input")
+    // .attr("class","searchPredict")
+    // .attr("type","number")
+    // .attr("placeholder","2021")
+    // .enter();
 
-    // Use to enter GDP/capita value:
-    d3.select(".predict_class")
-    .append("p")
-    .attr("class", "searchPredict")
-    .text("Enter values for gdp/capita:")
-    .append("br");
+    // // Use to enter GDP/capita value:
+    // d3.select(".predict_class")
+    // .append("p")
+    // .attr("class", "searchPredict")
+    // .text("Enter values for gdp/capita:")
+    // .append("br");
 
-    // Append GDP/capita box:
-    d3.select(".SearchPredict")
-    .append("input")
-    .attr("class","searchPredict")
-    .attr("type","number")
-    .attr("placeholder","GDP/capita (USD)")
-    .enter();
+    // // Append GDP/capita box:
+    // d3.select(".SearchPredict")
+    // .append("input")
+    // .attr("class","searchPredict")
+    // .attr("type","number")
+    // .attr("placeholder","GDP/capita (USD)")
+    // .enter();
 
 
     });
