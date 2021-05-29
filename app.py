@@ -13,6 +13,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 # math.log(60000) ### This is the natural log 
 
+import joblib
+from sklearn.preprocessing import MinMaxScaler
 
 
 #################################################
@@ -23,6 +25,12 @@ app = Flask(__name__)
 # Load saved Random Tree model making predictions for Happiness Score
 # from tensorflow.keras.models import load_model
 # model = load_model("Models/model2.sav")
+
+
+loaded_model2 = joblib.load('Models/model2.sav')
+print(loaded_model2)
+
+
 
 ####################### END POINTS #######################
 # END POINT: HOME
@@ -62,8 +70,26 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
 
 # prediction = equation
     # year = year + 20
+    year = float(year)
     gdp = float(gdp)
     log_gdp = math.log(gdp)
+    life_exp = float(life_exp)
+    support = float(support)
+    freedom = float(freedom)
+    generosity = float(generosity)
+    corruption = float(corruption)
+
+    X = [[year, log_gdp, support, life_exp, freedom, generosity, corruption]]
+    print(X)
+    print('--------------------------')
+    
+    # Attain X_scaler using x_train data
+    X_scaler = MinMaxScaler().fit(X)
+    X_scaled = X_scaler.transform(X)
+    print(X_scaled)
+
+    predictions = loaded_model2.predict(X_scaled) 
+    print(f"Happiness Score Prediction: {predictions}")
 
     return jsonify(f"Year: {year} logged GDP/capita: {log_gdp} healthy_life_exp: {life_exp} support: {support} freedom: {freedom} generosity: {generosity} corruption: {corruption}\n")
 
