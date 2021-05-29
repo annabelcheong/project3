@@ -91,7 +91,7 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
     predictions = loaded_model2.predict(X_scaled) 
     print(f"Happiness Score Prediction: {predictions}")
 
-    return jsonify(f"Year: {year} logged GDP/capita: {log_gdp} healthy_life_exp: {life_exp} support: {support} freedom: {freedom} generosity: {generosity} corruption: {corruption}\n")
+    return jsonify(f"Year: {year}, logged GDP/capita: {log_gdp}, healthy_life_exp: {life_exp}, support: {support}, freedom: {freedom}, generosity: {generosity}, corruption: {corruption}, predictions: {predictions}\n")
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 @app.route("/ml_json")

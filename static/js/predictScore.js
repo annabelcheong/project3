@@ -31,6 +31,8 @@ d3.select("#predict_but").on("click", function(year) {
 
     console.log(data);
 
+    
+
     // Use to enter year:
     // d3.select(".predict_class")
     // .append("p")
