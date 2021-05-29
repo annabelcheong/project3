@@ -84,7 +84,12 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
     ######### x_test_values are retrieved from PostGres database ########
 
     # Connect to database using sqlalchemy engine
-    rds_connection_string = "postgres:postgres@localhost:5432/the_flow_db"
+    # Local connection
+    ### Develop ###
+    # rds_connection_string = "postgres:postgres@localhost:5432/the_flow_db"
+    ### Deploy ###
+    rds_connection_string = "zrhfplbtdfzlsb:7a52354918a924ca23e8e6f09d7e221ec33c71c911e49ac91fef71daac2db1dc@ec2-54-74-14-109.eu-west-1.compute.amazonaws.com:5432/dasrk3uqfvvv2e"
+
     engine = create_engine(f'postgresql://{rds_connection_string}')
 
     # Run code to check connection is established and data is reading out from postgres database

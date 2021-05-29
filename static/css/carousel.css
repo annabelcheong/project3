@@ -189,7 +189,7 @@ td {
     padding: 5px;
     }​
 
-}
+};
 
 /* Biggest screen view */
 @media (min-width: 62em) {
@@ -243,5 +243,9 @@ td {
     text-align: center;
     padding: 5px;
     }​
+
+  /* .final_score {
+    margin-left:3rem;
+  } */
 
 };
