@@ -116,6 +116,8 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
     
     # Predict happiness score
     predictions = loaded_model2.predict(user_inputs) 
+    # Extract the first element of array
+    predictions = predictions[0]
 
     #####################################################
     # OLD DATA

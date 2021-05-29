@@ -16,9 +16,6 @@ CREATE TABLE happy_table_m2 (
   y_predicted DEC NOT NULL
 );
 
-
-year	logged_GDP_per_capita	support	life_exp	freedom	generosity	corruption
-
 --------------
 -- TABLE 2 --
 -- PURPOSE --
