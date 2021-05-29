@@ -135,8 +135,8 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
 
     print(f"Happiness Score Prediction: {predictions}")
 
-    return jsonify(f"year: {year}, logged GDP/capita: {log_gdp}, healthy_life_exp: {life_exp}, support: {support}, freedom: {freedom}, generosity: {generosity}, corruption: {corruption}, predictions: {predictions}\n")
-
+    # return jsonify(f"year: {year}, logged GDP/capita: {log_gdp}, healthy_life_exp: {life_exp}, support: {support}, freedom: {freedom}, generosity: {generosity}, corruption: {corruption}, predictions: {predictions}\n")
+    return jsonify(f"{predictions}")
 
 
 

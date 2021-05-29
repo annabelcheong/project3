@@ -29,10 +29,22 @@ d3.select("#predict_but").on("click", function(year) {
     // Read in flask end point
     d3.json(`/predict/${year}/${gdp}/${life_exp}/${support}/${freedom}/${generosity}/${corruption}`).then((data) => {
 
-    console.log(data);
+    console.log("Prediction score: " + data);
+
+    // Final Score
+    d3.select("#final_score")
+        .append("h3")
+        .attr("class", "text-muted")
+        .text(data);
+        // .append("br");
 
 
 
+
+    // <h3> <span class="text-muted"
+
+
+    // append("td").text(event_addy[i]);
     // Use to enter year:
     // d3.select(".predict_class")
     // .append("p")
