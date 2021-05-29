@@ -15,6 +15,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 import joblib
 from sklearn.preprocessing import MinMaxScaler
+import numpy as np
 
 
 #################################################
@@ -79,19 +80,65 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
     generosity = float(generosity)
     corruption = float(corruption)
 
-    X = [[year, log_gdp, support, life_exp, freedom, generosity, corruption]]
-    print(X)
-    print('--------------------------')
-    
-    # Attain X_scaler using x_train data
-    X_scaler = MinMaxScaler().fit(X)
-    X_scaled = X_scaler.transform(X)
-    print(X_scaled)
+    ######### Need to scale the values against x_test_values ########
+    ######### x_test_values are retrieved from PostGres database ########
 
-    predictions = loaded_model2.predict(X_scaled) 
+    # Connect to database using sqlalchemy engine
+    rds_connection_string = "postgres:postgres@localhost:5432/the_flow_db"
+    engine = create_engine(f'postgresql://{rds_connection_string}')
+
+    # Run code to check connection is established and data is reading out from postgres database
+    X_train = pd.read_sql_table('x_test_new_index_table', engine) 
+
+    # Make a record to append user input set to x_test_new_index
+    x_test_new_index = X_train
+
+    # User input set
+    append_user_inputs = [year, log_gdp, support, life_exp, freedom, generosity, corruption]
+
+    df_length = 76 # So each time a new user comes into use it, it overwrites the entry at index loc 76.
+    # Assign location index 76 as the user input. Append user input to dataframe 'x_test_new_index'
+    x_test_new_index.loc[df_length] = append_user_inputs
+    
+    #### At this point, x_test_new_index includes all x test values sets + user input x values set. ####
+
+    # Attain X_scaler using only x_train data
+    X_scaler = MinMaxScaler().fit(X_train)
+   
+    # Use x_scaler to transform the dataset 'x_test_new_index' (includes user input x values set)
+    X_scaled = X_scaler.transform(x_test_new_index)
+
+    # Extract out only user_input row (located at index '76')
+    user_inputs = X_scaled[76]
+
+    # Convert to appropriate format for the prediction model to predict y value.
+    user_inputs = np.array([user_inputs])
+    
+    # Predict happiness score
+    predictions = loaded_model2.predict(user_inputs) 
+
+    #####################################################
+    # OLD DATA
+    # X = [[year, log_gdp, support, life_exp, freedom, generosity, corruption]]
+    # print(X)
+    # print('--------------------------')
+    
+    # # Attain X_scaler using x_train data
+    # X_scaler = MinMaxScaler().fit(X)
+    # X_scaled = X_scaler.transform(X)
+    # print(X_scaled)
+
+    # predictions = loaded_model2.predict(X_scaled) 
+    #####################################################
+
     print(f"Happiness Score Prediction: {predictions}")
 
     return jsonify(f"Year: {year}, logged GDP/capita: {log_gdp}, healthy_life_exp: {life_exp}, support: {support}, freedom: {freedom}, generosity: {generosity}, corruption: {corruption}, predictions: {predictions}\n")
+
+
+
+
+
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 @app.route("/ml_json")
