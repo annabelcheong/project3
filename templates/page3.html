@@ -196,9 +196,13 @@
 
         <div class="row">
           <div class="col-lg-6">
+            <div class="predict_class">
+              <!-- JAVASCRIPT: predictScore.js -->
 
+            </div>
+             
               <!-- <form action="predict" method="GET"> -->
-              <form action="predict" method="GET">
+                <!-- <form> -->
                 <p>Enter <b>values</b> for each feature: <br>
                 </p>
 
@@ -246,16 +250,17 @@
                   <br><br>
 
                   <div class="field">
-                    <button class="button btn btn-secondary">Predict Happiness Score</button>
+                    <button class="button btn btn-secondary" id="predict_but">Predict Happiness Score</button>
                     <br>
                     
                   </div>
+
                   </p>
                 </div>
-              </form>
+              <!-- </form>  -->
 
-            <p>Predicted Happiness Score: <b style="font-size:30px;"> {{happy_result}} </b>
-              <br></p>
+            <!-- <p>Predicted Happiness Score: <b style="font-size:30px;"> {{happy_result}} </b>
+              <br></p> -->
 
           </div>
         
@@ -358,6 +363,7 @@
     <!-- Our JS -->
     <script type="text/javascript" src="static/js/wordCloud.js"></script>
     <script type="text/javascript" src="static/js/ml_table.js"></script>
+    <script type="text/javascript" src="static/js/predictScore.js"></script>
 </body>
 <!-- **************************************************************************** -->
 

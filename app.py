@@ -56,32 +56,15 @@ def books():
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 # @app.route("/predict")
-@app.route('/predict', methods=['GET'])
-def predict_score():
-    print("hello what's the name") 
+@app.route("/predict/<year>/<gdp>/<life_exp>/<support>", methods = ["GET"])
+
+def predict_score(year, gdp, life_exp, support):
+
 # prediction = equation
+    # year = year + 20
+    # log_gdp = math.log(gdp)
 
-    try:
-        print("testing number 2") # This works
-        # one = request.args.get('year') # Get parameters for name "year"
-        # gdp_per_capita = request.args.get('gdp') # Get parameters for name "gdp"
-        # ln_gdp_per_capita = math.log(gdp_per_capita)
-        # three = request.args.get('life_exp') # Get parameters for name "life_exp"
-        # four = request.args.get('support') # Get parameters for name "support"
-        # five = request.args.get('freedom')
-        # six = request.args.get('generosity')
-        # seven = request.args.get('corruption')
-        print("testing number 3")
-        happy_result= math.log(1+3*20000)
-        print("testing number 4")
-        # print(happy_result)
-        # return render_template('page3.html',{one})
-        return render_template('page3.html', happy_result=happy_result)
-
-    except:
-        return 'Error'
-
-
+    return jsonify(f"Year: {year} logged GDP/capita: {gdp} healthy_life_exp: {life_exp} support: {support}\n")
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 @app.route("/ml_json")
