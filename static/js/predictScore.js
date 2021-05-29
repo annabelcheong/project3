@@ -17,14 +17,17 @@ d3.select("#predict_but").on("click", function(year) {
     support = d3.select("#support").property("value")
     // console.log(support)
 
+    freedom = d3.select("#freedom").property("value")
     // freedom=0.44
 
+    generosity = d3.select("#generosity").property("value")
     // generosity = 0.2
 
+    corruption = d3.select("#corruption").property("value")
     // corruption =0.4
 
     // Read in flask end point
-    d3.json(`/predict/${year}/${gdp}/${life_exp}/${support}`).then((data) => {
+    d3.json(`/predict/${year}/${gdp}/${life_exp}/${support}/${freedom}/${generosity}/${corruption}`).then((data) => {
 
     console.log(data);
 

@@ -56,15 +56,16 @@ def books():
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 # @app.route("/predict")
-@app.route("/predict/<year>/<gdp>/<life_exp>/<support>", methods = ["GET"])
+@app.route("/predict/<year>/<gdp>/<life_exp>/<support>/<freedom>/<generosity>/<corruption>", methods = ["GET"])
 
-def predict_score(year, gdp, life_exp, support):
+def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption):
 
 # prediction = equation
     # year = year + 20
-    # log_gdp = math.log(gdp)
+    gdp = float(gdp)
+    log_gdp = math.log(gdp)
 
-    return jsonify(f"Year: {year} logged GDP/capita: {gdp} healthy_life_exp: {life_exp} support: {support}\n")
+    return jsonify(f"Year: {year} logged GDP/capita: {log_gdp} healthy_life_exp: {life_exp} support: {support} freedom: {freedom} generosity: {generosity} corruption: {corruption}\n")
 
 # END POINT: MACHINE LEARNING PREDICTION; JSON DATA
 @app.route("/ml_json")
