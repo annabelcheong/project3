@@ -225,13 +225,6 @@ td {
     justify-content: center;
   }
 
-  /* td {
-    background-color: rgb(160, 173, 154);
-    margin: 20px 20px 20px 20px;
-    text-align: center;
-    padding: 5px;
-  }​ */
-
 };
 
 /* Biggest screen view */
@@ -288,12 +281,5 @@ td {
     text-align: center;
     justify-content: center;
   }
-
-  /* td {
-    background-color: rgb(160, 173, 154);
-    margin: 20px 20px 20px 20px;
-    text-align: center;
-    padding: 5px;
-    }​ */
 
 };
