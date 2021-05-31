@@ -1,5 +1,3 @@
-// insert into <div id='ml_table'> TABLE GOES HERE </div>
-
 /////////////////////////////////
 ////// TEST //////
 /////////////////////////////////
@@ -40,7 +38,7 @@ var rows, row_entries, row_entries_no_anchor, row_entries_with_anchor;
 
 d3.json("/ml_json").then((data) => { // loading data from server
   
-    // Clear out content in table previously
+    // Select tbody in html and assign it to variable 'tbody'
     const tbody = d3.select("tbody");
 
     // Year 
@@ -72,6 +70,7 @@ d3.json("/ml_json").then((data) => { // loading data from server
     d3.select("#search").on("keyup", function() { // filter according to key pressed 
         var searched_data = data,
         text = this.value.trim();
+        // Clear out the content in the table previously
         tbody.html("");
       
         searched_data.map((r) => {
