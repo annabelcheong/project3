@@ -24,13 +24,8 @@ import numpy as np
 app = Flask(__name__)
 
 # Load saved Random Tree model making predictions for Happiness Score
-# from tensorflow.keras.models import load_model
-# model = load_model("Models/model2.sav")
-
-
 loaded_model2 = joblib.load('Models/model2.sav')
 print(loaded_model2)
-
 
 
 ####################### END POINTS #######################
@@ -94,34 +89,35 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
     engine = create_engine(f'postgresql://{rds_connection_string}')
 
     # Run code to check connection is established and data is reading out from postgres database
-    X_train = pd.read_sql_table('x_test_new_index_table', engine) 
+    x_train_df = pd.read_sql_table('x_train_df', engine) 
 
-    # Make a record to append user input set to x_test_new_index
-    x_test_new_index = X_train
+    # Assign new variable that will have an additional user input X row
+    x_train_user_df = x_train_df.copy()
 
-    # User input set
+    # User input set to be appended to x_train_user_df dataframe
     append_user_inputs = [year, log_gdp, support, life_exp, freedom, generosity, corruption]
 
-    df_length = 76 # So each time a new user comes into use it, it overwrites the entry at index loc 76.
-    # Assign location index 76 as the user input. Append user input to dataframe 'x_test_new_index'
-    x_test_new_index.loc[df_length] = append_user_inputs
+    df_length = 226 # So each time a new user comes into use it, it overwrites the entry at index loc 226.
+    # Assign location index 226 as the user input. Append user input to dataframe 'x_test_new_index'
+    x_train_user_df.loc[df_length] = append_user_inputs
     
-    #### At this point, x_test_new_index includes all x test values sets + user input x values set. ####
+    #### At this point, x_test_train_user_df includes all x test values sets + user input x values set. ####
 
     # Attain X_scaler using only x_train data
-    X_scaler = MinMaxScaler().fit(X_train)
+    X_scaler = MinMaxScaler().fit(x_train_df)
    
     # Use x_scaler to transform the dataset 'x_test_new_index' (includes user input x values set)
-    X_scaled = X_scaler.transform(x_test_new_index)
+    X_scaled = X_scaler.transform(x_train_user_df)
 
-    # Extract out only user_input row (located at index '76')
-    user_inputs = X_scaled[76]
+    # Extract out only user_input row (located at index '226')
+    user_inputs = X_scaled[226]
 
     # Convert to appropriate format for the prediction model to predict y value.
     user_inputs = np.array([user_inputs])
     
     # Predict happiness score
     predictions = loaded_model2.predict(user_inputs) 
+    
     # Extract the first element of array
     predictions = predictions[0]
 
