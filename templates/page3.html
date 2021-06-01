@@ -76,6 +76,7 @@
 <main>
 
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    
     <div class="carousel-inner">
       <div class="carousel-item active"> 
 
@@ -83,230 +84,200 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
         <div class="container">
-
           <div class="carousel-caption text-start">
-            
-           
+            <!-- Image of page 3  -->
             <img class="main_pic img-fluid rounded" src="static/images/ML.png" width="70%", height="45%">
             <br>
-           
-
-            <!-- <h1>Find your flow</h1> -->
+            <!-- Quote of page 3 -->
             <p class= "jingle">Machine Learning on the Features of Happiness</p>
-            <!-- <p><a class="btn btn-lg btn-primary" href="#">first button</a></p> -->
-          
-          </div>
-
-        </div>d
-      </div>
-      <div class="carousel-item">
-        <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
-        <img src="static/images/snail.png"> </img>
-
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
 
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div>
       </div>
     </div>
 
+  </div>
 
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
+  <!-- Container for main content  -->
   <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <!-- <div class="row"> -->
-      
-      <!-- <div class="col-lg-12">
-        <h2>Happiness Score by Country</h2> -->
-
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 class="featurette-heading"><br>Machine Learning Features</h2>
-              <br>
-            <h3> <span class="text-muted">Random Forest Algorithm: What are your friends worth?</span></h3>
-            <p> The happiness dataset from 2020 and 2021 has been used in a Machine Learning 
-              context to predict the happiness score based on the features. 
-              <br><br>
-              Random Forest (a type of Machine Learning algorithm) was used to determine the importance of each feature, better 
-              depicted in the word cloud below. At a glance, <b>social support</b> and <b>GDP</b> are the most 
-              influential features of happiness.
-            </p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 img-fluid" id="happy_cloud">
-            <!-- INSERT WORD CLOUD HERE - USE CLASS "happy_cloud" -->
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-        <!-- ------------------------------------------------------ -->
-
-        <div class="row">
-          <div class="col-lg-12">
-            <h2 class="featurette-heading">Happiness Score Prediction</h2>
-              <br>
-            <h3> <span class="text-muted">Random Forest Algorithm: Predict your happiness</span></h3>
-            <p> The Random Forest Model will predict the happiness score based on the feature values you
-              provide below. Score ranges from 1 to 10 where 10 is the happiest.
-            </p>
-          </div>
-        </div>
-              <br><br>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="predict_class">
-              <!-- JAVASCRIPT: predictScore.js -->
-
-            </div>
-             
-              <!-- <form action="predict" method="GET"> -->
-                <!-- <form> -->
-                <p>Enter <b>values</b> for each feature: <br>
-                </p>
-
-                <div class="field">
-                  <p class="control">
-                  1. Year: <input class="input" type="number" value=2021 min=2020 max=2050 step='1' name="year" id="year" placeholder=2021>
-                  </p>
-                </div>
-
-                <div class="field">
-                  <p class="control">
-                  2. GDP/capita (USD): <input class="input" type="number" value=62723 min=700 max=200000  step='1' name="gdp" id="gdp" placeholder=62723>
-                  </p>
-                </div>
-
-                <div class="field">
-                  <p class="control">
-                  3. Healthy Life Expectancy: <input class="input" type="number" value=73.9 min=45 max=80  step='0.1' name="life_exp" id="life_exp" placeholder=73.9>
-                  </p>
-                </div>
-
-                <div class="field">
-                  <p class="control">
-                  4. Social Support: <input class="input" type="number" value=0.94 min=0 max=1  step='0.01' name="support" id="support" placeholder=0.94>
-                  </p>
-                </div>
-
-                <div class="field">
-                  <p class="control">
-                  5. Freedom: <input class="input" type="number" value=0.91 min=0 max=1  step='0.01' name="freedom" id="freedom" placeholder=0.91>
-                  </p>
-                </div>
-
-                <div class="field">
-                  <p class="control">
-                  6. Generosity: <input class="input" type="number" value=0.16 min=-0.5 max=0.5  step='0.01' name="generosity" id="generosity" placeholder=0.16>
-                  </p>
-                </div>
-
-                <div class="field">
-                  <p class="control">
-                  7. Perceived Corruption: <input class="input" type="number" value=0.44 min=0 max=1  step='0.01' name="corruption" id="corruption" placeholder=0.44>
-                  <br><br>
-                  <i>Default values based on Australia 2021 data</i>
-                  <br><br>
-
-                  <div class="field">
-                    <button class="button btn btn-secondary" id="predict_but">Predict Happiness Score</button>
-                    <br>
-                  </div>
-
-                  <div id="final_score">
-                    <!-- APPEND PREDICTION SCORE HERE VIA predictScore.js -->
-                  </div>
-    
-                  </p>
-                </div>
-              <!-- </form>  -->
-
-            <!-- <p>Predicted Happiness Score: <b style="font-size:30px;"> {{happy_result}} </b>
-              <br></p> -->
-
-          </div>
-        
-
-        <div class="col-lg-6">
-          <img class="img-fluid happiness_pic rounded" src="static/images/bali.png" alt="happiness_pic" width="500" height="180">
-        </div>
+    <!-- First row: Machine Learning Features Explanation -->    
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="featurette-heading"><br>Machine Learning Features</h2>
+          <br>
+        <h3> <span class="text-muted">Random Forest Algorithm: What are your friends worth?</span></h3>
+        <p> The happiness dataset from 2020 and 2021 has been used in a Machine Learning 
+          context to predict the happiness score based on the features. 
+          <br><br>
+          Random Forest (a type of Machine Learning algorithm) was used to determine the importance of each feature, better 
+          depicted in the word cloud below. At a glance, <b>social support</b> and <b>GDP</b> are the most 
+          influential features of happiness.
+        </p>
       </div>
-      
-        <div class="col-lg-12">  
-          <div>         
-              
+    </div>
+    <!-- First row ENDS: Machine Learning Features Explanation -->
+
+    <!-- Second row: Features Word Cloud (wordCloud.js) -->   
+    <div class="row">
+      <div class="col-lg-12 img-fluid" id="happy_cloud">
+        <!-- JAVASCRIPT: wordCloud.js, References class="happy_cloud" -->
+      </div>
+    </div>
+    <!-- Second row ENDS: Features Word Cloud (wordCloud.js) -->
+
+    <hr class="featurette-divider">
+
+     <!-- Third row: Explanation of Happiness Score Prediction -->   
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="featurette-heading">Happiness Score Prediction</h2>
+          <br>
+        <h3> <span class="text-muted">Random Forest Algorithm: Predict your happiness</span></h3>
+        <p> The Random Forest Model will predict the happiness score based on the feature values you
+          provide below. Score ranges from 1 to 10 where 10 is the happiest.
+        </p>
+      </div>
+    </div>
+     <!-- Third row ENDS: Explanation of Happiness Score Prediction --> 
+    
+    <br><br>
+
+    <!-- Forth row: Happiness Prediction Input predict.js, bali swing image -->   
+    <div class="row">
+      <!-- Happiness Prediction Input predict.js -->
+      <div class="col-lg-6">
           
-          </div>
-        </div>
-        <hr class="featurette-divider">
-         <!-- ------------------------------------------------------ -->
+        <p>Enter <b>values</b> for each feature: <br>
+        </p>
 
-        <div class="row">
-          <div class="happy_map col-lg-12">
-            <h2 class="featurette-heading">Random Forest Model Accuracy</h2>
-             <h2><span class="text-muted">The accuracy of the Random Forest model is <b>76%</b>.</span> </h2>
-              <br>
-            <p>
-              Out the of full 2020 and 2021 dataset, <br>
-              - 80% was used to train the model <br>
-              - 20% was used to test the model. 
-              <br><br>
-              The table below is the list of test data with its <b>actual</b> and <b>predicted happiness score</b>.
-              Despite only 76% accurate, instances when predictions are inaccurate are predicted close to the actual happiness score
-              (usually 1 happiness score number away from actual).
-            </p>
-          </div>
+        <div class="field">
+          <p class="control">
+          1. Year: <input class="input" type="number" value=2021 min=2020 max=2050 step='1' name="year" id="year" placeholder=2021>
+          </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-12 img-fluid">
-            <!-- INSERT TABLE OF SEVERAL COUNTRIES: and it's feature values, happiness score and predicteed ML happiness score -->
-            <table class="table align-middle">
-
-              <div class =searching></div>
-              <!-- INSERT SEARCH BAR FOR USER TO TYPE IN COUNTRY -->
-              <br>
-
-              <thead class="ml_headings">
-              <tr>
-                  <th class="table-head">Year</th>
-                  <th class="table-head">Country</th>
-                  <th class="table-head">Actual Score</th>
-                  <th class="table-head">Predicted Score</th>
-              </tr>
-              </thead>
-
-              <tbody class="ml_table"></tbody>
-
-          </table>
-          </div>
+        <div class="field">
+          <p class="control">
+          2. GDP/capita (USD): <input class="input" type="number" value=62723 min=700 max=200000  step='1' name="gdp" id="gdp" placeholder=62723>
+          </p>
         </div>
+
+        <div class="field">
+          <p class="control">
+          3. Healthy Life Expectancy: <input class="input" type="number" value=73.9 min=45 max=80  step='0.1' name="life_exp" id="life_exp" placeholder=73.9>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+          4. Social Support: <input class="input" type="number" value=0.94 min=0 max=1  step='0.01' name="support" id="support" placeholder=0.94>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+          5. Freedom: <input class="input" type="number" value=0.91 min=0 max=1  step='0.01' name="freedom" id="freedom" placeholder=0.91>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+          6. Generosity: <input class="input" type="number" value=0.16 min=-0.5 max=0.5  step='0.01' name="generosity" id="generosity" placeholder=0.16>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+          7. Perceived Corruption: <input class="input" type="number" value=0.44 min=0 max=1  step='0.01' name="corruption" id="corruption" placeholder=0.44>
+          <br><br>
+          <i>Default values based on Australia 2021 data</i>
+          <br><br>
+          </p>
+        </div>
+
+        <!-- Prediction Button: Reference predictScore.js -->
+        <div class="field">
+          <button class="button btn btn-secondary" id="predict_but">Predict Happiness Score</button>
+          <br><br>
+        </div>
+        <!-- Prediction Button ENDS : Reference predictScore.js -->
+
+        <!-- Prediction Score: Reference predictScore.js -->
+        <div class="field" id="final_score">
+          <!-- APPEND PREDICTION SCORE HERE VIA predictScore.js -->
+          <br>
+        </div>
+         <!-- Prediction Score ENDS: Reference predictScore.js -->
+
+      </div>
+      <!-- Happiness Prediction Input predict.js ENDS -->
+    
+      <!-- Bali swing image -->
+      <div class="col-lg-6">
+        <img class="img-fluid happiness_pic rounded" src="static/images/bali.png" alt="happiness_pic" width="500" height="180">
+      </div>
+      <!-- Bali swing image ENDS -->
+
+    </div>
+    <!-- Forth row ENDS: Happiness Prediction Input predict.js, bali swing image --> 
+        
+    <hr class="featurette-divider">
+
+    <!-- Fifth row: Summary Paragraph of Random Forest Accuracy -->
+    <div class="row">
+      <div class="happy_map col-lg-12">
+        <h2 class="featurette-heading">Random Forest Model Accuracy</h2>
+        <h2><span class="text-muted">The accuracy of the Random Forest model is <b>76%</b>.</span> </h2>
+        <br>
+        <p>
+          Out the of full 2020 and 2021 dataset, <br>
+          - 80% was used to train the model <br>
+          - 20% was used to test the model. 
+          <br><br>
+          The table below is the list of test data with its <b>actual</b> and <b>predicted happiness score</b>.
+          Despite only 76% accurate, instances when predictions are inaccurate are predicted close to the actual happiness score
+          (usually 1 happiness score number away from actual).
+        </p>
+      </div>
+    </div>
+     <!-- Fifth row ENDS: Summary Paragraph of Random Forest Accuracy -->
+
+     <!-- Sixth row: Table of Actual and Prediction Scores by country -->
+    <div class="row">
+      <div class="col-lg-12 img-fluid">
+
+        <!-- INSERT TABLE OF SEVERAL COUNTRIES: and it's feature values, happiness score and predicteed ML happiness score -->
+        <table class="table align-middle">
+
+          <div class =searching>
+            <!-- INSERT SEARCH BAR FOR USER TO TYPE IN COUNTRY -->
+          </div>
+          
+          <br>
+
+          <thead class="ml_headings">
+          <tr>
+              <th class="table-head">Year</th>
+              <th class="table-head">Country</th>
+              <th class="table-head">Actual Score</th>
+              <th class="table-head">Predicted Score</th>
+          </tr>
+          </thead>
+
+          <tbody class="ml_table">
+            <!-- JAVASCRIPT: wordCloud.js: References class="ml_table" -->
+          </tbody>
+
+      </table>
+      
+      </div>
+    </div>
+    <!-- Sixth row ENDS: Table of Actual and Prediction Scores by country -->
 
     <hr class="featurette-divider">
 
   </div><!-- Container for main content ENDS -->
-
 
   <!-- FOOTER -->
   <footer class="container">
