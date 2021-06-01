@@ -1,18 +1,15 @@
+## OPTIONAL FOR DATABASE_URL: Can set DATABASE_URL instead of printing the string.
 # import os
 # print(os.environ['DATABASE_URL'])
 
 # Dependencies
 from flask import Flask, render_template, redirect, jsonify
-# import sqlalchemy
 import pandas as pd
 import math
 from sqlalchemy import create_engine, func
 import json
 import os
 from flask_sqlalchemy import SQLAlchemy
-
-# math.log(60000) ### This is the natural log 
-
 import joblib
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
