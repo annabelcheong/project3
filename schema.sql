@@ -32,20 +32,3 @@ CREATE TABLE x_train_df (
   generosity DEC NOT NULL,
   corruption DEC NOT NULL
 );
-
---------------
--- TABLE 3 --
--- PURPOSE --
--- Overall: To allow user to predict happiness score --
--- Immediate: To allow X test values to be scaled along with the user input X values
---------------
-
-CREATE TABLE x_test_new_index_table (
-  year DEC NOT NULL,
-  logged_gdp_per_capita DEC NOT NULL,
-  support DEC NOT NULL,
-  life_exp DEC NOT NULL,
-  freedom DEC NOT NULL,
-  generosity DEC NOT NULL,
-  corruption DEC NOT NULL
-);
