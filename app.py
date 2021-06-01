@@ -92,32 +92,40 @@ def predict_score(year, gdp, life_exp, support, freedom, generosity, corruption)
     x_train_df = pd.read_sql_table('x_train_df', engine) 
 
     # Assign new variable that will have an additional user input X row
-    x_train_user_df = x_train_df.copy()
+    # x_train_user_df = x_train_df.copy()
+#####################################################
+    # # User input set to be appended to x_train_user_df dataframe
+    # append_user_inputs = [year, log_gdp, support, life_exp, freedom, generosity, corruption]
 
-    # User input set to be appended to x_train_user_df dataframe
-    append_user_inputs = [year, log_gdp, support, life_exp, freedom, generosity, corruption]
-
-    df_length = 226 # So each time a new user comes into use it, it overwrites the entry at index loc 226.
-    # Assign location index 226 as the user input. Append user input to dataframe 'x_test_new_index'
-    x_train_user_df.loc[df_length] = append_user_inputs
+    # df_length = 226 # So each time a new user comes into use it, it overwrites the entry at index loc 226.
+    # # Assign location index 226 as the user input. Append user input to dataframe 'x_test_new_index'
+    # x_train_user_df.loc[df_length] = append_user_inputs
     
-    #### At this point, x_test_train_user_df includes all x test values sets + user input x values set. ####
+    # #### At this point, x_test_train_user_df includes all x test values sets + user input x values set. ####
+
+    # # Attain X_scaler using only x_train data
+    # X_scaler = MinMaxScaler().fit(x_train_df)
+   
+    # # Use x_scaler to transform the dataset 'x_test_new_index' (includes user input x values set)
+    # X_scaled = X_scaler.transform(x_train_user_df)
+
+    # # Extract out only user_input row (located at index '226')
+    # user_inputs = X_scaled[226]
+
+    # # Convert to appropriate format for the prediction model to predict y value.
+    # user_inputs = np.array([user_inputs])
+#####################################################
+    # Put user inputs into the right format for prediction equation
+    user_inputs = [[year, log_gdp, support, life_exp, freedom, generosity, corruption]]   
 
     # Attain X_scaler using only x_train data
     X_scaler = MinMaxScaler().fit(x_train_df)
-   
-    # Use x_scaler to transform the dataset 'x_test_new_index' (includes user input x values set)
-    X_scaled = X_scaler.transform(x_train_user_df)
+    # Use x_scaler to transform the user input dataset 'x_test_new_index' (includes user input x values set)
+    X_scaled_user_inputs = X_scaler.transform(user_inputs)
 
-    # Extract out only user_input row (located at index '226')
-    user_inputs = X_scaled[226]
-
-    # Convert to appropriate format for the prediction model to predict y value.
-    user_inputs = np.array([user_inputs])
-    
     # Predict happiness score
-    predictions = loaded_model2.predict(user_inputs) 
-    
+    predictions = loaded_model2.predict(X_scaled_user_inputs) 
+
     # Extract the first element of array
     predictions = predictions[0]
 
