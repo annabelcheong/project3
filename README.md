@@ -53,30 +53,47 @@ Loading in raw data (csv format) and performing ETL on the dataset via Python Pa
     - page4.html
 
 - ### FOLDER: static
-    This folder contains the styling file (CSS), images for the HTML pages and JS files which is referenced to ids in page3.html .
+    This folder contains the styling file (CSS) and images for the HTML pages. The JS files in this folder are all referenced to ids on page3.html .
     - CSS
         - bootstrap.min.css
         - carousel.css
     - js
         - ml_table.js
+            This table allows the user to view all the actual and predicted happiness scores by country.
         - predictScore.js
+            This section allows the user to input and submit values for the x features, and have it returning a happiness score. 
         - wordCloud.js
+            This summarises the amount of influence of each feature on the happiness score and how they compare relatively. 
     - images
         - Multiple images in this folder for the Navbar logo and all the html pages.
 
 - ### FILE: app.py
+    Consists of multiple endpoints to:
+        - render html files
+        - return dataframes or variables which have been attained from Heroku PostGRES
 
 - ### FILE: happinessETL.ipynb
-    - Extracts the raw data from the Resource folder datasets. Transforms the dataframe such that the final dataframe is 'clean'; ready for use in the happiness_ML.ipynb file and for Tableau Online. 
-    - The final dataframe produced from the ETL process is saved into Resources, titled 'happy_2020_2021.csv'. 
+    Extracts the raw data from the Resource folder datasets. Transforms the dataframe such that the final dataframe is 'clean'; ready for use in the happiness_ML.ipynb file and for Tableau Online. 
+    
+    The final dataframe produced from the ETL process is saved into Resources, titled 'happy_2020_2021.csv'. 
 
 - ### FILE: happiness_ML.ipynb
-
-
-
-
+    This file prepares the data for machine learning. The file happy_2020_2021.csv produced from happinessETL.ipynb, is used to further process the data so that the x and y variables are split to allow x_train, y_train and x_test and y_test variables be formed.
+    Furthermore, the x_train and x_test variables are scaled to prepare it for use in the prediction model.
 
 - ### FILE: schema.sql
-    - Queries for creating the tables on Heroku PostGRES
+    - Queries for creating the tables on Heroku PostGRES.
 
+- ### FILE: model1.ipynb
+    The machine learning model used is Linear Regression for model1.
+    The accuracy attained is 60%.
+
+- ### FILE: model2.ipynb
+    The machine learning model used is Random Forest for model2.
+    The accuracy attained is 76%. This is the highest accuracy of all 3 models. Thus, this model was used as the prediction model for the website.
+
+- ### FILE: model3.ipynb
+    The machine learning model used is Keras Deep Learning for model3.
+    The accuracy attained is 67%.
+    
 *************************
