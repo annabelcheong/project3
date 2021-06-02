@@ -6,7 +6,6 @@ Completed by Annabel Cheong
 
 *************************
 # Project Requirements
-
 - Use ML: Skikit-Learn and/or another machine learning library
 - Use at least 2 of the following: Python Pandas, Python Matplotlib, HTML/CSS/Bootstrap, JavaScript Plotly, JavScript D3.js, JavaScript Leaflet, SQL Database, MongoDB Database, Google Cloud SQL, Amazon AWS, Tableau. 
 - Host application using Heroku or a tool of your choice.
@@ -30,9 +29,9 @@ Overall, the process of successfully connecting up the databases to Flask and de
 
 One of the biggest learning experiences is that Heroku periodically changes the uri of the Heroku PostGRES the Heroku app is connected to. Luckily, the tables and content remain as is. To prevent continuously changing code in the Flask app, simply set the DATABASE_URL (connection string) variable in the laptop's local environment. (Heroku will automatically change its DATABASE_URL variable on its environment to match the Heroku PostGRES uri.)
 
-For additional information of the project, see the The Flow.pdf in this repository.
+For additional information of the project, see The Flow.pdf in this repository.
 
-------------------------
+*************************
 ## Repository Structure
 - ### FOLDER: Resources
     - Raw CSV Files: happy2020.csv, happy2021.csv, countries_codes_and_coodinates.csv
@@ -56,11 +55,11 @@ For additional information of the project, see the The Flow.pdf in this reposito
         - bootstrap.min.css
         - carousel.css
     - js
-        - ml_table.js
+        - ml_table.js: 
             This table allows the user to view all the actual and predicted happiness scores by country.
-        - predictScore.js
+        - predictScore.js: 
             This section allows the user to input and submit values for the x features, and have it returning a happiness score. 
-        - wordCloud.js
+        - wordCloud.js:
             This summarises the amount of influence of each feature on the happiness score and how they compare relatively. 
     - images
         - Multiple images in this folder for the Navbar logo and all the html pages.
@@ -80,7 +79,7 @@ For additional information of the project, see the The Flow.pdf in this reposito
     Furthermore, the x_train and x_test variables are scaled to prepare it for use in the prediction model.
 
 - ### FILE: schema.sql
-    - Queries for creating the tables on Heroku PostGRES.
+    - Contains queries for creating the tables on Heroku PostGRES.
 
 - ### FILE: model1.ipynb
     The machine learning model used is Linear Regression for model1.
