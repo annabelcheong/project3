@@ -20,19 +20,17 @@ Completed by Annabel Cheong
 The purpose of the project is to produce a website to raise awareness on the factors which have the most influence on happiness for an individual. Ultimately, provoke the audience to think about how the factors (social support, money, country's corruption etc) apply to their happiness.
 
 ## Methodology and Approach 
-Loading in raw data (csv format) and performing ETL on the dataset via Python Pandas. There will be 2 final dataframes resulting from the ETL. 
+Loading in raw data (csv format) and performing ETL on the dataset via Python Pandas. There will be 3 final dataframes resulting from the ETL. 
 - The first dataframe will be converted back to a csv file, and loaded to Tableau Public to produce visualisations. 
 - The second dataframe will be loaded to the PostGRES database, loaded into the Flask app web server as an API endpoint. Subsequently, the API endpoint will be referenced in a javascript to be deployed onto the html webpage. Heroku will be used to deploy the website.
+- The third dataframe is the X_train variable dataframe. This is loaded into PosgGRES and retrieved in the Flask app to enable X scaling, which is required for the final prediction variable returned at the endpoint function. 
 
 ## Challenges
+Overall, the process of successfully connecting up the databases to Flask and deploying the Flask app proved to be most challenging. 
 
+One of the biggest learning experiences is that Heroku periodically changes the uri of the Heroku PostGRES the Heroku app is connected to. Luckily, the tables and content remain as is. To prevent continuously changing code in the Flask app, simply set the DATABASE_URL (connection string) variable in the laptop's local environment. (Heroku will automatically change its DATABASE_URL variable on its environment to match the Heroku PostGRES uri.)
 
-#### Talk about X-scaling
-
-
-#### ***TALK ABOUT USER os.env variable and how uri changes regularly in Heroku Postgres***
-
-
+For additional information of the project, see the The Flow.pdf in this repository.
 
 ------------------------
 ## Repository Structure
@@ -95,5 +93,5 @@ Loading in raw data (csv format) and performing ETL on the dataset via Python Pa
 - ### FILE: model3.ipynb
     The machine learning model used is Keras Deep Learning for model3.
     The accuracy attained is 67%.
-    
+
 *************************
